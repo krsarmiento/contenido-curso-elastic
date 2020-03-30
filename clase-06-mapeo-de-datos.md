@@ -62,7 +62,7 @@ PUT /platos/_mapping
 - si búscamos **activ** la búsqueda no tendrá resultados
 - si fuera **text**, buscar **activ** retornaría **activo, inactivo**
 - Por eso es importante diferenciarlos
-- Creamos un plato
+- Vamos a crear un par de platos de prueba
 
 ```java
 POST /platos/_doc/1
@@ -74,6 +74,20 @@ POST /platos/_doc/1
   "ultimaModificacion": {
     "usuario": "crd07@mail.com",
     "fecha": "2020-02-19"
+  }
+}
+```
+
+```java
+PUT /platos/_doc/2
+{
+  "nombre": "Ensaladísima",
+  "descripcion": "Aceitunas negras, cebolla roja, queso, pimentón amarillo, tomate cherry, aguacate, ajonjolí. (vegano, vegetariano y saludable)",
+  "estado": "activo",
+  "pedidosUltimaHora": 0,
+  "ultimaModificacion": {
+    "usuario": "crd07@mail.com",
+    "fecha": "2020-01-22"
   }
 }
 ```
