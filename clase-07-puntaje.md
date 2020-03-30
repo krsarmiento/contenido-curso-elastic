@@ -1,22 +1,9 @@
 # Clase 07 - Puntaje
 
 - **puntaje**: Que tan bien **coincidió** el documento con la búsqueda
-- Los resultados vienen **ordenados** por defecto usando ese puntaje
-- Agreguemos dos nuevos platos
-
-```java
-PUT /platos/_doc/2
-{
-  "nombre": "Ensaladísima",
-  "descripcion": "Aceitunas negras, cebolla roja, queso, pimentón amarillo, tomate cherry, aguacate, ajonjolí. (vegano, vegetariano y saludable)",
-  "estado": "activo",
-  "pedidosUltimaHora": 0,
-  "ultimaModificacion": {
-    "usuario": "crd07@mail.com",
-    "fecha": "2020-01-22"
-  }
-}
-```
+- Algoritmo verifica **# Ocurrencias** y **unicidad** de las palabras
+- Los resultados vienen **ordenados** por defecto usando dicho puntaje
+- Agreguemos un nuevo plato
 
 ```java
 PUT /platos/_doc/3
@@ -32,8 +19,10 @@ PUT /platos/_doc/3
 }
 ```
 
+- Vamos a realizar una búsqueda simple: **nachos con queso**
 - Para búsquedas simples usamos **simple_query_string**
-- Vamos a buscar **nachos con queso**
+
+## Búsqueda No. 1: Nachos con queso
 
 ```java
 GET /platos/_search
@@ -44,16 +33,18 @@ GET /platos/_search
 }
 ```
 
-- **max_score**:    3.2200139
+- **max_score**: 3.2200139
 
-- **Nachos XL**:    3.2200139 
--- palabra **nachos** en **nombre**
--- palabras **nachos/queso** en **descripción**
--- Mayor coincidencia
+### **Nachos XL**: 3.2200139 
+- palabra **nachos** en **nombre**
+- palabras **nachos/queso** en **descripción**
+- Mayor coincidencia
 
-- **Ensaladísima**: 0.4471386
--- Palabra queso en **descripción**
--- Menor coincidencia
+### **Ensaladísima**: 0.4471386
+- Palabra queso en **descripción**
+- Menor coincidencia
+
+## Búsqueda No. 2: Bowl Pollo Saludable
 
 ```java
 GET /platos/_search
@@ -64,14 +55,15 @@ GET /platos/_search
 }
 ```
 
-- **Bowl Picante**: 1.9992181
--- Bowl en **nombre**
--- Pollo en **descripción**
+### **Bowl Picante**: 1.9992181
+- Bowl en **nombre**
+- Pollo en **descripción**
 
-- **Ensaladísima**: 0.9331132
--- Saludable en **descripción**
+###  **Ensaladísima**: 0.9331132
+- Saludable en **descripción**
 
-- Algoritmo verifica **# Ocurrencias** y **unicidad** de las palabras
+## Búsqueda No. 3: Guacamole Picante
+
 - Modifiquemos el puntaje agregando **fields**
 - Con  **^** modificamos el peso de un campo
 
@@ -87,10 +79,10 @@ GET /platos/_search
 }
 ```
 
-- Si **`nombre^2`**
--- 1. Bowl Picante (Palabra picante en título)
--- 2. Nachos XL
+### Si **`nombre^2`**
+1. Bowl Picante (Palabra picante en título)
+2. Nachos XL
 
-- Si **`descripcion^2`**
--- 1. Nachos XL (guacamole y picante en descripción)
--- 2. Bowl Picante
+### Si **`descripcion^2`**
+1. Nachos XL (guacamole y picante en descripción)
+2. Bowl Picante
