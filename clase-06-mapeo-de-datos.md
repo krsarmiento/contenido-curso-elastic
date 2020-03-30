@@ -3,7 +3,7 @@
 - **Mapeo por defecto** si no lo especificamos
 - Para **rendimiento óptimo**: crear mapeo
 - Ejemplo: ElasticSearch puede guardar texto como **text** y **keyword**
-- **text** es pefecto para búsquedas de texto completo
+- **text** es perfecto para búsquedas de texto completo
 - **text** falla si queremos buscar el valor exacto, mejor usar **keyword**
 
 ## Tipos de datos en ElasticSearch
