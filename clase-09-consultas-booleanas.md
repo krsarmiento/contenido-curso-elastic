@@ -20,12 +20,15 @@ GET /platos/_search
       "should" : [
         { "match" : { "descripcion" : "aguacate" } },
         { "match" : { "descripcion" : "guacamole" } }
-      ]
+      ],
+      "minimum_should_match": 1
     }
   }
 }
 ```
 
+- **must** y **filter** acompañan a **should**
+- Debemos indicar minimum_should_match=1
 - Dos resultados (1.3802519, 1.0470967)
 - Ni **estado=activo** ni **pedidosUltimaHora=0** contribuyen al puntaje
 - **must, filter y must_not** contienen una sola consulta (**usamos {}**) 
@@ -47,15 +50,16 @@ GET /platos/_search
       "should" : [
         { "match" : { "descripcion" : "aguacate" } },
         { "match" : { "descripcion" : "guacamole" } }
-      ]
+      ],
+      "minimum_should_match": 1
     }
   }
 }
 ```
 
 - Mismos dos resultados (1.5137832, 1.1806281)
-- El puntaje **subió** para ambos porque tienen **estado=activo**
-- De las dos consultas en **should**, solo una debe hacer match (**minimum_should_match=1** por defecto)
+- Puntaje **subió** porque **estado** ahora influye al puntaje
+- De las dos consultas en **should**, solo una debe hacer match (**minimum_should_match=1**)
 - Ahora **minimum_should_match=2**
 - Agreguemos otra consulta a **should** (**descripcion=pico de gallo**)
 
