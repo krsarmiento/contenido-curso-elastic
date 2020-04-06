@@ -1,6 +1,7 @@
 # Clase 04 - Índices y Documentos
 
-- Comencemos creando un nuevo documento en el índice usuarios con el id 1.
+- Comencemos creando nuestro primer modelo: Usuarios
+- Agregaremos un nuevo documento con el id 1 en el **índice usuarios**
 
 ```javascript
 PUT /usuarios/_doc/1
@@ -14,7 +15,6 @@ PUT /usuarios/_doc/1
 - Result: **Created**
 - **_doc** es la uri para acceder y manipular documentos
 - Ahora vamos a ejecutar la consulta nuevamente separando nombre y apellido
-
 
 ```java
 PUT /usuarios/_doc/1
