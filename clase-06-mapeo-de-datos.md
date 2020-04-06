@@ -1,21 +1,7 @@
 # Clase 06 - Mapeo de Datos
 
-- **Mapeo por defecto** si no lo especificamos
-- Para **rendimiento óptimo**: crear mapeo
-- Ejemplo: ElasticSearch puede guardar texto como **text** y **keyword**
-- **text** es perfecto para búsquedas de texto completo
-- **text** falla si queremos buscar el valor exacto, mejor usar **keyword**
-
-## Tipos de datos en ElasticSearch
-
-- **strings**: text, keyword
-- **fechas**: date
-- **números**: integer, long, float, double
-- **booleanos**: boolean
-- **objetos**: object, nested
-- **geográficos**: geo_point, geo_shape
-
-- Vamos a crear un índice con un **mapeo explícito**
+- Vamos a crear nuestro segundo modelo: Platos
+- Usaremos un **mapeo explícito**
 
 ```java
 PUT /platos
@@ -62,13 +48,13 @@ PUT /platos/_mapping
 - si búscamos **activ** la búsqueda no tendrá resultados
 - si fuera **text**, buscar **activ** retornaría **activo, inactivo**
 - Por eso es importante diferenciarlos
-- Vamos a crear un par de platos de prueba
+- Ahora, vamos a crear los platos que vimos al inicio
 
 ```java
 POST /platos/_doc/1
 {
   "nombre": "Bowl Picante",
-  "descripcion": "Pollo, salsa picante, frijoles negros, chicharrón, plátano maduro y aguacate.",
+  "descripcion": "Pollo, salsa picante, frijoles negros, plátano maduro y aguacate.",
   "estado": "activo",
   "pedidosUltimaHora": 42,
   "ultimaModificacion": {
@@ -82,7 +68,7 @@ POST /platos/_doc/1
 PUT /platos/_doc/2
 {
   "nombre": "Ensaladísima",
-  "descripcion": "Aceitunas negras, cebolla roja, queso, pimentón amarillo, tomate cherry, aguacate, ajonjolí. (vegano, vegetariano y saludable)",
+  "descripcion": "Aceitunas, cebolla, queso, pimentón, tomate cherry, aguacate. (vegetariano y saludable)",
   "estado": "activo",
   "pedidosUltimaHora": 0,
   "ultimaModificacion": {
