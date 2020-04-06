@@ -1,7 +1,7 @@
 # Clase 06 - Mapeo de Datos
 
 - Vamos a crear nuestro segundo modelo: Platos
-- Usaremos un **mapeo explícito**
+- Usaremos un **mapeo explícito** para crear el índice
 
 ```java
 PUT /platos
