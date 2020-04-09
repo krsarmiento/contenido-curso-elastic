@@ -1,9 +1,6 @@
 # Clase 07 - Puntaje
 
-- **puntaje**: Que tan bien **coincidió** el documento con la búsqueda
-- Algoritmo verifica **# Ocurrencias** y **unicidad** de las palabras
-- Los resultados vienen **ordenados** por defecto usando dicho puntaje
-- Agreguemos un nuevo plato
+## Agreguemos un nuevo plato
 
 ```java
 PUT /platos/_doc/3
@@ -19,10 +16,10 @@ PUT /platos/_doc/3
 }
 ```
 
+## Búsqueda No. 1: Nachos con queso
+
 - Vamos a realizar una búsqueda simple: **nachos con queso**
 - Para búsquedas simples usamos **simple_query_string**
-
-## Búsqueda No. 1: Nachos con queso
 
 ```java
 GET /platos/_search
