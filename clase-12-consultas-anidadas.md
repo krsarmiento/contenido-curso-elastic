@@ -1,19 +1,18 @@
 # Clase 12 - Consultas Anidadas
 
-- Crear índice restaurantes con nombre, categorias (una de ellas principal)
+## Modelo Restaurantes
+- Creamos índice con **nombre y categorias** (una de ellas principal)
 
 ```java
 PUT /restaurantes
 {
   "mappings":{
     "properties":{
-      "nombre":{
-        "type":"text"
-      },
+      "nombre":{ "type":"text" },
       "categorias" : {
         "type" : "nested",
         "properties": {
-          "nombre": { "type" : "term" },
+          "nombre": { "type" : "text" },
           "principal": { "type" : "boolean" }
         }
       }
@@ -22,8 +21,7 @@ PUT /restaurantes
 }
 ```
 
-- categorias de tipo nested
-- Agreguemos restaurantes
+## Agreguemos restaurantes
 
 ```java
 PUT /restaurantes/_doc/1
@@ -59,8 +57,7 @@ PUT /restaurantes/_doc/3
 }
 ```
 
-- Buscamos restaurantes con categoria **Comida Rápida**
-- Usamos consulta **nested**
+# Búsqueda No. 1: Categoria=Comida Rápida 
 
 ```java
 GET /restaurantes/_search
@@ -82,9 +79,7 @@ GET /restaurantes/_search
 }
 ```
 
-- Dos resultados
-- Se retorna el documento completo en ambos
-- Buscamos **Comida Rápida** como categoría principal
+# Búsqueda No. 2: Categoria=Comida Rápida, principal=true
 
 
 ```java
@@ -110,8 +105,7 @@ GET /restaurantes/_search
 }
 ```
 
-- McDonald's solamente
-- Buscamos otra categoría como principal: **Comida Saludable**
+# Búsqueda No. 1: Categoria=Comida Saludable, principal=true 
 
 ```java
 GET /restaurantes/_search
@@ -135,5 +129,3 @@ GET /restaurantes/_search
   }
 }
 ```
-
-- Cero Resultados
