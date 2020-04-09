@@ -12,7 +12,7 @@ PUT /restaurantes
       "categorias" : {
         "type" : "nested",
         "properties": {
-          "nombre": { "type" : "text" },
+          "nombre": { "type" : "keyword" },
           "principal": { "type" : "boolean" }
         }
       }
