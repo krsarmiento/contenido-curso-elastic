@@ -62,10 +62,9 @@ POST /usuarios/_doc
 - Podemos **agregar u omitir** campos al crear un documento
 - Esto nos permite comenzar a **trabajar de inmediato** sin definir absolutamente nada
 
-- Ahora miremos cómo agregar **múltiples documentos** en una sola consulta
+## Crear múltiples usuarios
 - Vamos a crear el archivo **usuarios.json** con el siguiente contenido
 
-## Crear múltiples usuarios
 ```java
 { "index" : { "_id" : "3" } }
 { "nombre" : "Beth", "apellido": "Smith" }
