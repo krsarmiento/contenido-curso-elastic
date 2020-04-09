@@ -1,6 +1,6 @@
 # Clase 04 - Índices y Documentos
 
-- Comencemos creando nuestro primer modelo: Usuarios
+## Creamos nuestro primer modelo: Usuarios
 - Agregaremos un nuevo documento con el id 1 en el **índice usuarios**
 
 ```javascript
@@ -38,6 +38,9 @@ GET /usuarios/_doc/1
 - Versión 2
 - Found: **True**
 - **_source** contiene el documento
+
+
+## Creamos otro usuario con POST
 - Ahora usemos **POST** para crear otro usuario
 
 ```java
@@ -51,20 +54,18 @@ POST /usuarios/_doc
 - id: IStlI3EB3YXo6VetOVW5 (**autogenerado**)
 - **Dos maneras** de crear documentos sobre un índice
 - Con **POST** no tenemos que indicar ID mientras que con **PUT** si
-- Para consultarlo debemos usar el id
 
-```java
-GET /usuarios/_doc/IStlI3EB3YXo6VetOVW5
-```
-
-- **Notar**: No hemos creado un índice de manera explícita
+## A tener en cuenta
+- No hemos creado un índice de manera explícita
 - ElasticSearch **por defecto** crea uno si no existe
 - **Infiere** el tipo de dato de los campos que vayamos agregando
 - Podemos **agregar u omitir** campos al crear un documento
 - Esto nos permite comenzar a **trabajar de inmediato** sin definir absolutamente nada
+
 - Ahora miremos cómo agregar **múltiples documentos** en una sola consulta
 - Vamos a crear el archivo **usuarios.json** con el siguiente contenido
 
+## Crear múltiples usuarios
 ```java
 { "index" : { "_id" : "3" } }
 { "nombre" : "Beth", "apellido": "Smith" }
