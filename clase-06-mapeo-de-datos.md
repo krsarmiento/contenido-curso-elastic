@@ -1,5 +1,6 @@
 # Clase 06 - Mapeo de Datos
 
+## Creamos índice con mapeo
 - Vamos a crear nuestro segundo modelo: Platos
 - Usaremos un **mapeo explícito** para crear el índice
 
@@ -8,15 +9,9 @@ PUT /platos
 {
   "mappings":{
     "properties":{
-      "nombre":{
-        "type":"text"
-      },
-      "descripcion":{
-        "type":"text"
-      },
-      "pedidosUltimaHora":{
-        "type":"integer"
-      },
+      "nombre":{ "type":"text" },
+      "descripcion":{ "type":"text" },
+      "pedidosUltimaHora":{ "type":"integer" },
       "ultimaModificacion":{
         "properties": {
           "usuario":  { "type": "text" },
@@ -35,20 +30,12 @@ PUT /platos
 PUT /platos/_mapping
 {
   "properties":{
-    "estado":{
-      "type":"keyword"
-    }
+    "estado":{ "type":"keyword" }
   }
 }
 ```
 
-- nombre es **text** (búsqueda libre)
-- estado **keyword** (búsqueda exacta)
-- estados permitidos: **activo, pendiente e inactivo**
-- si búscamos **activ** la búsqueda no tendrá resultados
-- si fuera **text**, buscar **activ** retornaría **activo, inactivo**
-- Por eso es importante diferenciarlos
-- Ahora, vamos a crear los platos que vimos al inicio
+## Creamos platos de ejemplo
 
 ```java
 POST /platos/_doc/1
