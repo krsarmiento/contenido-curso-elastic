@@ -1,7 +1,8 @@
-# Clase 09 - Clausulas Booleanas
+# Clase 09 - Consultas Booleanas
 
 - Retorna documentos que coincidan con las **combinaciones de ocurrencias** dentro de ella
-- **Índice de Platos**: Vamos a hacer un a consulta booleana con todas las cláusulas
+
+## Consultamos usando todos los tipos de cláusulas
 
 ```java
 GET /platos/_search
@@ -28,12 +29,15 @@ GET /platos/_search
 ```
 
 - **must** y **filter** acompañan a **should**
-- Debemos indicar minimum_should_match=1
+- Debemos indicar **minimum_should_match=1**
 - Dos resultados (1.3802519, 1.0470967)
 - Ni **estado=activo** ni **pedidosUltimaHora=0** contribuyen al puntaje
 - **must, filter y must_not** contienen una sola consulta (**usamos {}**) 
 - **should** contiene varias consultas (**usamos []**)
-- Movemos **estado=activo** a must para que afecte el puntaje (**ahora must debe ser []**)
+
+## Hacemos que el estado afecte el puntaje
+- Movemos **estado=activo** a **must** para que afecte el puntaje 
+- ahora must debe ser una lista (**[]**)
 
 ```java
 GET /platos/_search
@@ -60,7 +64,8 @@ GET /platos/_search
 - Mismos dos resultados (1.5137832, 1.1806281)
 - Puntaje **subió** porque **estado** ahora influye al puntaje
 - De las dos consultas en **should**, solo una debe hacer match (**minimum_should_match=1**)
-- Ahora **minimum_should_match=2**
+
+## **minimum_should_match=2**
 - Agreguemos otra consulta a **should** (**descripcion=pico de gallo**)
 
 ```java
