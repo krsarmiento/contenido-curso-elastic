@@ -67,11 +67,9 @@ GET /restaurantes/_search
       "path": "categorias",
       "query": {
         "bool": {
-          "must": [
-            {
-              "term": { "categorias.nombre": "Comida Rápida" }
-            }
-          ]
+          "must": {
+            "term": { "categorias.nombre": "Comida Rápida" }
+          }
         }
       }
     }
@@ -105,7 +103,7 @@ GET /restaurantes/_search
 }
 ```
 
-# Búsqueda No. 1: Categoria=Comida Saludable, principal=true 
+# Búsqueda No. 3: Categoria=Comida Saludable, principal=true 
 
 ```java
 GET /restaurantes/_search
@@ -121,6 +119,28 @@ GET /restaurantes/_search
             },
             {
               "term": { "categorias.principal": true }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+# Búsqueda No. 4: Categoria=Comida Saludable
+
+```java
+GET /restaurantes/_search
+{
+  "query": {
+    "nested": {
+      "path": "categorias",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": { "categorias.nombre": "Comida Saludable" }
             }
           ]
         }
