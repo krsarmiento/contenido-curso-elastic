@@ -1,6 +1,16 @@
 # Clase 13 - Proyecto: Unificación de Datos
 
-## Actualizamos índice restaurantes con platos anidados y nuevos campos
+## Paso 1 - Consultamos el mapeo actual de los índices
+
+```java
+GET /restaurantes/_mapping
+```
+
+```java
+GET /platos/_mapping
+```
+
+## Paso 2 - Actualizamos restaurantes con platos y nuevos campos
 
 ```java
 PUT /restaurantes/_mapping
@@ -29,7 +39,7 @@ PUT /restaurantes/_mapping
 }
 ```
 
-## Actualizamos restaurantes existentes con **POST y `_update`**
+## Paso 3 - Actualizamos restaurantes existentes con **POST y `_update`**
 
 ```java
 POST /restaurantes/_update/1
@@ -103,7 +113,7 @@ POST /restaurantes/_update/3
 }
 ```
 
-## Vemos como quedó nuestro directorio de restaurantes
+## Paso 4 - Vemos como quedó nuestro directorio de restaurantes
 
 ```java
 GET /restaurantes/_search
