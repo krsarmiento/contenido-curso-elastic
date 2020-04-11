@@ -108,4 +108,3 @@ POST /restaurantes/_update/3
 ```java
 GET /restaurantes/_search
 ```
-
