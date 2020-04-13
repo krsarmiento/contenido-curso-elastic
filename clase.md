@@ -112,9 +112,3 @@ POST /restaurantes/_update/3
   }
 }
 ```
-
-## Paso 4 - Vemos como quedó nuestro directorio de restaurantes
-
-```java
-GET /restaurantes/_search
-```
