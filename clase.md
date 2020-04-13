@@ -3,7 +3,8 @@
 ## Paso 1 - Crear archivo de configuración
 - **`mkdir curso-elastic-platzi`**
 - **`cd curso-elastic-platzi`**
-- Abrir archivo con Sublime (u otro editor de texto)
+- Abrimos directorio con Sublime (u otro editor de texto)
+- Creamos **`docker-compose.yml`**
 
 ```python
 version: '2.2'
