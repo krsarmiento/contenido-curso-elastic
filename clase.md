@@ -1,9 +1,9 @@
 # Clase 03 - Poner a Correr ElasticSearch
 
-- Para correr el servicio de ElasticSearch en nuestros ambientes locales vamos a utilizar Docker.
+## Paso 1 - Crear archivo de configuración
 - **`mkdir curso-elastic-platzi`**
 - **`cd curso-elastic-platzi`**
-- **`nano docker-compose.yml`** (editor de texto)
+- Abrir archivo con Sublime (u otro editor de texto)
 
 ```python
 version: '2.2'
@@ -37,14 +37,10 @@ networks:
     driver: bridge
 ```
 
-- **`ls`**
-- Este archivo describe a docker como va a **levantar** el servicio de ElasticSearch
-- Nos basamos en la **documentación oficial**, el link queda como enlace.
-- Servicio llamado **es01**
-- Versión **7.6.0**
-- ElasticSearch corre por defecto en el puerto **9200**
+## Paso 2 - Levantar el servicio
 - **`docker-compose up`**
-- Esperamos a que el servicio termine de levantar, mientras tanto abrimos **Postman**
-- Postman: **GET http://localhost:9200**
-- En el resultado podemos ver el nombre del servicio y la versión que especificamos
-- ElasticSearch ya está listo para recibir datos.
+- Esperamos a que levante, mientras tanto abrimos **Postman**
+
+```java
+GET http://localhost:9200
+```
