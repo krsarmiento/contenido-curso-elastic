@@ -10,8 +10,6 @@ PUT /usuarios/_doc/1
 }
 ```
 
-- Usamos **PUT**
-- Versión 1
 - Result: **Created**
 - **_doc** es la uri para acceder y manipular documentos
 - Ahora vamos a ejecutar la consulta nuevamente separando nombre y apellido
@@ -24,9 +22,6 @@ PUT /usuarios/_doc/1
 }
 ```
 
-- Mismo ID
-- Agregamos un **nuevo campo** sobre la marcha
-- Versión 2
 - Result: **Updated**
 - Ahora, consultemos el documento creado.
 
@@ -34,11 +29,7 @@ PUT /usuarios/_doc/1
 GET /usuarios/_doc/1
 ```
 
-- Índice: **Usuarios**
-- Versión 2
 - Found: **True**
-- **_source** contiene el documento
-
 
 ## Creamos otro usuario con POST
 - Ahora usemos **POST** para crear otro usuario
@@ -51,8 +42,7 @@ POST /usuarios/_doc
 }
 ```
 
-- id: IStlI3EB3YXo6VetOVW5 (**autogenerado**)
-- **Dos maneras** de crear documentos sobre un índice
+- ID **autogenerado**
 - Con **POST** no tenemos que indicar ID mientras que con **PUT** si
 
 ## A tener en cuenta
@@ -60,9 +50,8 @@ POST /usuarios/_doc
 - ElasticSearch **por defecto** crea uno si no existe
 - **Infiere** el tipo de dato de los campos que vayamos agregando
 - Podemos **agregar u omitir** campos al crear un documento
-- Esto nos permite comenzar a **trabajar de inmediato** sin definir absolutamente nada
 
-## Crear múltiples usuarios
+## Miremos como crear varios usuarios al tiempo
 - Vamos a crear el archivo **usuarios.json** con el siguiente contenido
 
 ```java
@@ -72,8 +61,9 @@ POST /usuarios/_doc
 { "nombre" : "Jerry", "apellido": "Smith" }
 ```
 
-- En Postman, vamos a seleccionar **binary** para especificar un archivo, y luego procedemos a seleccionar **usuario**.json dentro de **curso-elastic-platzi**
-- Por último, vamos a hacer una consulta a la siguiente url
+- En Postman, vamos a seleccionar **binary**
+- Luego seleccionamos **usuarios.json**
+- Luego enviamos la consulta a **`_bulk`**
 
 ```java
 POST /usuarios/_bulk
@@ -81,4 +71,4 @@ POST /usuarios/_bulk
 
 - **Errors**: False
 - **Items**: Lista de resultados para cada uno de los documentos
-- Result: **Created (para todos)**
+- Result: **Created** (para todos)
