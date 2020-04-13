@@ -26,15 +26,13 @@ GET /usuarios/_mapping
 ```
 
 - El mapeo es la definición de cómo van a ser almacenados los documentos dentro de un índice
-- Campos tipo **texto, número, fecha,** etc.
 - ElasticSearch lo crea **por defecto** si no se especifica
-- **Infiere** los tipos de datos de los documentos almacenados
-- **Más adelante** hablaremos en detalle de su funcionamiento
 - En este caso tenemos dos campos de tipo **text: nombre y apellido**
+- **Más adelante** hablaremos en detalle de su funcionamiento
 
 ## **POST / PUT**
 
-- **Clase pasada**: *crear/actualizar* documentos
+- En la **Clase pasada** *creamos y actualizamos* documentos
 - Sin embargo, la actualización directamente usando **`_doc`** sobreescribe el documento
 - Actualicemos el usuario 1: **edad=60**
 
@@ -54,40 +52,33 @@ GET /usuarios/_doc/1
 - **nombre/apellido** han desaparecido
 - Solo quedad **edad**
 - La operación es una **indexación**, no una **actualización**
-- Para actualizar una parte del documento usamos **`_update`**
+- Para actualizar una parte del documento hacemos un **POST** a **`_update`**
 
 ```java
 POST /usuarios/_update/1
 {
 	"doc": {
 	    "nombre": "Rick",
-	    "apellido": "Sanchez"
+	    "apellido": "Sanchez",
+	    "edad": 50
 	}
 }
 ```
 
-- Dentro de **doc** indicamos los campos a actualizar
-- Agreguemos **nombre/apellido**
-- Miremos el documento nuevamente
-
 ```java
 GET /usuarios/_doc/1
 ```
-- **edad=60**
-- **nombre/apellido** aparecen
-
 
 ## **DELETE**
-- Borrar **documentos/indices**
+- Borrar **documentos o índices**
 - Borremos el documento con ID 1
 
 ```java
 DELETE /usuarios/_doc/1
 ```
 
-- Result: Deleted
-- Creamos **índice de prueba** para poder borrarlo
-
+- Result: **Deleted**
+- Vamos a crear un **índice de prueba** para poder borrarlo
 
 ```java
 POST /usuarios_deprecated/_doc
@@ -96,7 +87,7 @@ POST /usuarios_deprecated/_doc
 }
 ```
 
-- Y ahora lo borramos
+- Y ahora lo **borramos**
 
 ```java
 DELETE /usuarios_deprecated
