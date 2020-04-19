@@ -41,11 +41,11 @@ PUT /platos/_mapping
 POST /platos/_doc/1
 {
   "nombre": "Bowl Picante",
-  "descripcion": "Pollo, salsa picante, frijoles negros, plátano maduro y aguacate.",
+  "descripcion": "Pollo, salsa picante, frijoles, plátano y aguacate",
   "estado": "activo",
   "pedidosUltimaHora": 42,
   "ultimaModificacion": {
-    "usuario": "crd07@mail.com",
+    "usuario": "rsanchez@mail.com",
     "fecha": "2020-02-19"
   }
 }
@@ -55,12 +55,14 @@ POST /platos/_doc/1
 PUT /platos/_doc/2
 {
   "nombre": "Ensaladísima",
-  "descripcion": "Aceitunas, cebolla, queso, pimentón, tomate cherry, aguacate. (vegetariano y saludable)",
+  "descripcion": "Aceitunas, cebolla, queso, tomate, aguacate (saludable)",
   "estado": "activo",
   "pedidosUltimaHora": 0,
   "ultimaModificacion": {
-    "usuario": "crd07@mail.com",
+    "usuario": "rsanchez@mail.com",
     "fecha": "2020-01-22"
   }
 }
 ```
+
+## Siguiente Clase: Puntaje
