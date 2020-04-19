@@ -6,7 +6,7 @@
 PUT /platos/_doc/3
 {
   "nombre": "Nachos XL",
-  "descripcion": "Nachos con Carne molida, guacamole, pico de gallo, salsa picante, queso chedar y frijoles negros.",
+  "descripcion": "Nachos con carne, guacamole, pico de gallo, salsa picante, queso y frijoles",
   "estado": "activo",
   "pedidosUltimaHora": 11,
   "ultimaModificacion": {
