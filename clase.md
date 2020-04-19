@@ -1,7 +1,6 @@
 # Clase 04 - Índices y Documentos
 
 ## Creamos nuestro primer modelo: Usuarios
-- Agregaremos un nuevo documento con el id 1 en el **índice usuarios**
 
 ```javascript
 PUT /usuarios/_doc/1
@@ -9,10 +8,6 @@ PUT /usuarios/_doc/1
   "nombre": "Rick Sanchez"
 }
 ```
-
-- Result: **Created**
-- **_doc** es la uri para acceder y manipular documentos
-- Ahora vamos a ejecutar la consulta nuevamente separando nombre y apellido
 
 ```java
 PUT /usuarios/_doc/1
@@ -22,17 +17,12 @@ PUT /usuarios/_doc/1
 }
 ```
 
-- Result: **Updated**
-- Ahora, consultemos el documento creado.
-
+## Consultamos el usuario con ID 1
 ```java
 GET /usuarios/_doc/1
 ```
 
-- Found: **True**
-
 ## Creamos otro usuario con POST
-- Ahora usemos **POST** para crear otro usuario
 
 ```java
 POST /usuarios/_doc
@@ -69,6 +59,4 @@ POST /usuarios/_doc
 POST /usuarios/_bulk
 ```
 
-- **Errors**: False
-- **Items**: Lista de resultados para cada uno de los documentos
-- Result: **Created** (para todos)
+## Siguiente Clase: Verbos HTTP
