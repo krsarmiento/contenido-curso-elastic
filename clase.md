@@ -39,5 +39,4 @@ GET /platos/_search
 }
 ```
 
-- Ensaladísima: **activo**, crd07@**mail.com**, **cero pedidos**
-- Ningun plato estado=agotado, pero devuelve resultados por estar en un **OR** con **estado=activo**
+- Ensaladísima: **activo**, rsanchez@**mail.com**, **cero pedidos**
