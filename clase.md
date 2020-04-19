@@ -11,15 +11,9 @@
 GET /usuarios/_search
 ```
 
-- `_search` para búsquedas en un índice
-- **took**: tiempo de la consulta
-- Si queremos obtener el documento sin metadata, usamos `_source`
-
 ```java
 GET /usuarios/_source/1
 ```
-
-- Ahora miremos el mapeo del índice
 
 ```java
 GET /usuarios/_mapping
@@ -27,7 +21,6 @@ GET /usuarios/_mapping
 
 - El mapeo es la definición de cómo van a ser almacenados los documentos dentro de un índice
 - ElasticSearch lo crea **por defecto** si no se especifica
-- En este caso tenemos dos campos de tipo **text: nombre y apellido**
 - **Más adelante** hablaremos en detalle de su funcionamiento
 
 ## **POST / PUT**
@@ -49,8 +42,6 @@ PUT /usuarios/_doc/1
 GET /usuarios/_doc/1
 ```
 
-- **nombre/apellido** han desaparecido
-- Solo quedad **edad**
 - La operación es una **indexación**, no una **actualización**
 - Para actualizar una parte del documento hacemos un **POST** a **`_update`**
 
@@ -77,7 +68,6 @@ GET /usuarios/_doc/1
 DELETE /usuarios/_doc/1
 ```
 
-- Result: **Deleted**
 - Vamos a crear un **índice de prueba** para poder borrarlo
 
 ```java
@@ -86,8 +76,6 @@ POST /usuarios_deprecated/_doc
 	"nombre": "deprecated"
 }
 ```
-
-- Y ahora lo **borramos**
 
 ```java
 DELETE /usuarios_deprecated
