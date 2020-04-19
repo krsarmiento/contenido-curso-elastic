@@ -21,11 +21,19 @@ Luego el instalador te pregunta si quieres mover la aplicación al folder de App
 ![Postman Mac](postman-mac.png)
 
 
-## Paso 1 - Crear archivo de configuración
-- **`mkdir curso-elastic-platzi`**
-- **`cd curso-elastic-platzi`**
-- Abrimos directorio con Sublime (u otro editor de texto)
-- Creamos **`docker-compose.yml`**
+## Paso 2 - Crear archivo de configuración
+Para crear el archivo de configuración te recomiendo utilices un directorio personalizado para este curso, en el cual puedas guardar todos los archivos que usarás. Entonces lo primero será crear este directorio y entrar en él.
+
+```python
+$ mkdir curso-elastic-platzi
+$ cd curso-elastic-platzi
+```
+
+Luego abres un editor de texto (te recomendamos **Visual Studio Code**) y creas un archivo dentro de este directorio. El nombre del archivo es **`docker-compose.yml`**
+
+![Docker Compose VSC](docker-compose-vsc.png)
+
+Una vez creado el archivo, le vas a agregar la siguiente configuración
 
 ```python
 version: '2.2'
@@ -59,10 +67,26 @@ networks:
     driver: bridge
 ```
 
-## Paso 2 - Levantar el servicio
-- **`docker-compose up`**
-- Esperamos a que levante, mientras tanto abrimos **Postman**
+Este archivo es basado en las configuraciones recomendadas para correr ElasticSearch con Docker. Esta guía se puede consultar en https://www.elastic.co/guide/en/elasticsearch/reference/7.6/docker.html.
 
-```java
-GET http://localhost:9200
+Acá un breve repaso de lo que hace este archivo:
+
+1. Le dice a docker que use la imagen de ElasticSearch con versión **7.6.0**. Esta es la versión que vas a usar durante el curso.
+2. Le dice que el nombre del contenedor será **es01**
+3. Le indica unas configuraciones para crear el cluster y el nodo por defecto
+4. Le indica que el puerto sobre el que corre ElasticSearch es el **9200**. A su vez le dice que exponga ese mismo puerto a tu máquina para que puedas usar el servicio bajo el puerto estándar.
+
+Por ultimo guardamos el archivo
+
+## Paso 3 - Levantar el servicio
+Luego de tener el archivo listo, le dice a docker que levante el servicio ejecutando el siguiente comando
+
+```python
+$ docker-compose up
 ```
+
+Este comando se encarga de ejecutar las directivas que especificamos en el archivo y esto resultará en el servicio de ElasticSearch funcionando correctamente en el puerto **9200**. Esto puede tomar unos segundos mientras se configura el contenedor y se levanta el servicio.
+
+Para comprobar que ElasticSearch ya está corriendo sobre tu máquina, entonces abres Postman y ejecutas un GET sobre la url http://localhost:9200. Si todo salió correctamente verás un resultado similar a este
+
+![Postman Get](postman-get.png)
