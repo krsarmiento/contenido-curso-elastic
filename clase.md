@@ -10,7 +10,7 @@ PUT /platos/_doc/3
   "estado": "activo",
   "pedidosUltimaHora": 11,
   "ultimaModificacion": {
-    "usuario": "a.melie@mail.com",
+    "usuario": "jsmith@mail.com",
     "fecha": "2020-03-01"
   }
 }
@@ -83,3 +83,5 @@ GET /platos/_search
 ### Si **`descripcion^2`**
 1. Nachos XL (guacamole y picante en descripción)
 2. Bowl Picante
+
+## Siguiente Clase: Tipos de Cláusulas
