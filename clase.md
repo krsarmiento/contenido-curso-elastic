@@ -5,35 +5,26 @@
 ```javascript
 PUT /usuarios/_doc/1
 {
-  "nombre": "Rick Sanchez"
-}
-```
-
-```java
-PUT /usuarios/_doc/1
-{
   "nombre": "Rick",
   "apellido": "Sanchez"
 }
 ```
 
-## Consultamos el usuario con ID 1
-```java
-GET /usuarios/_doc/1
-```
-
 ## Creamos otro usuario con POST
 
 ```java
-POST /usuarios/_doc
+POST /usuarios/_doc?refresh
 {
-  "nombre": "Morty",
-  "apellido": "Smith"
+  "nombre": "Morty Smith"
 }
 ```
 
 - ID **autogenerado**
 - Con **POST** no tenemos que indicar ID mientras que con **PUT** si
+
+- Al ejecutar un guardado **en código** y de una consultar el documento, **este no se verá**
+- `?refresh` sirve para tener cambios enseguida (sin esperar 1 seg)
+- No es recomendado por **performance**
 
 ## A tener en cuenta
 - No hemos creado un índice de manera explícita
