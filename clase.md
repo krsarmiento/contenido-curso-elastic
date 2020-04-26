@@ -38,7 +38,7 @@ PUT /platos/_mapping
 ## Creamos platos de ejemplo
 
 ```java
-POST /platos/_doc/1
+PUT /platos/_doc/1
 {
   "nombre": "Bowl Picante",
   "descripcion": "Pollo, salsa picante, frijoles, plátano y aguacate",
