@@ -92,3 +92,5 @@ GET /platos/_search
 ```
 
 - **Nachos XL**: **guacamole** y **pico de gallo** en descripción
+
+## Próxima Clase: Consultas Compuestas
