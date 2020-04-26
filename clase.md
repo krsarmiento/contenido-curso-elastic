@@ -12,6 +12,10 @@ GET /usuarios/_search
 ```
 
 ```java
+GET /usuarios/_doc/1
+```
+
+```java
 GET /usuarios/_source/1
 ```
 
@@ -39,7 +43,7 @@ PUT /usuarios/_doc/1
 - Ahora consultemos el documento
 
 ```java
-GET /usuarios/_doc/1
+GET /usuarios/_source/1
 ```
 
 - La operación es una **indexación**, no una **actualización**
@@ -57,7 +61,7 @@ POST /usuarios/_update/1
 ```
 
 ```java
-GET /usuarios/_doc/1
+GET /usuarios/_source/1
 ```
 
 ## **DELETE**
