@@ -57,7 +57,29 @@ PUT /restaurantes/_doc/3
 }
 ```
 
-# Búsqueda No. 1: Categoria=Comida Rápida 
+# Búsqueda No. 1: Categoria=Comida Saludable
+
+```java
+GET /restaurantes/_search
+{
+  "query": {
+    "nested": {
+      "path": "categorias",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": { "categorias.nombre": "Comida Saludable" }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+# Búsqueda No. 2: Categoria=Comida Rápida 
 
 ```java
 GET /restaurantes/_search
@@ -77,7 +99,7 @@ GET /restaurantes/_search
 }
 ```
 
-# Búsqueda No. 2: Categoria=Comida Rápida, principal=true
+# Búsqueda No. 3: Categoria=Comida Rápida, principal=true
 
 
 ```java
@@ -89,59 +111,8 @@ GET /restaurantes/_search
       "query": {
         "bool": {
           "must": [
-            {
-              "term": { "categorias.nombre": "Comida Rápida" }
-            },
-            {
-              "term": { "categorias.principal": true }
-            }
-          ]
-        }
-      }
-    }
-  }
-}
-```
-
-# Búsqueda No. 3: Categoria=Comida Saludable, principal=true 
-
-```java
-GET /restaurantes/_search
-{
-  "query": {
-    "nested": {
-      "path": "categorias",
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "term": { "categorias.nombre": "Comida Saludable" }
-            },
-            {
-              "term": { "categorias.principal": true }
-            }
-          ]
-        }
-      }
-    }
-  }
-}
-```
-
-# Búsqueda No. 4: Categoria=Comida Saludable
-
-```java
-GET /restaurantes/_search
-{
-  "query": {
-    "nested": {
-      "path": "categorias",
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "term": { "categorias.nombre": "Comida Saludable" }
-            }
+            { "term": { "categorias.nombre": "Comida Rápida" } },
+            { "term": { "categorias.principal": true } }
           ]
         }
       }
