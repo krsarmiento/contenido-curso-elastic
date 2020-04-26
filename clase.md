@@ -40,3 +40,5 @@ GET /platos/_search
 ```
 
 - Ensaladísima: **activo**, rsanchez@**mail.com**, **cero pedidos**
+
+## Próxima clase: Consultas Anidadas
