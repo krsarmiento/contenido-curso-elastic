@@ -22,18 +22,16 @@ POST /usuarios/_doc?refresh
 - ID **autogenerado**
 - Con **POST** no tenemos que indicar ID mientras que con **PUT** si
 
-- Al ejecutar un guardado **en código** y de una consultar el documento, **este no se verá**
 - `?refresh` sirve para tener cambios enseguida (sin esperar 1 seg)
-- No es recomendado por **performance**
+- No es recomendado por **rendimiento**
 
 ## A tener en cuenta
-- No hemos creado un índice de manera explícita
+- No creaste un índice de manera explícita
 - ElasticSearch **por defecto** crea uno si no existe
-- **Infiere** el tipo de dato de los campos que vayamos agregando
-- Podemos **agregar u omitir** campos al crear un documento
+- Puedes **agregar u omitir** campos al crear un documento
 
 ## Miremos como crear varios usuarios al tiempo
-- Vamos a crear el archivo **usuarios.json** con el siguiente contenido
+- Vas a crear el archivo **usuarios.json** con el siguiente contenido
 
 ```java
 { "index" : { "_id" : "3" } }
@@ -42,9 +40,9 @@ POST /usuarios/_doc?refresh
 { "nombre" : "Jerry", "apellido": "Smith" }
 ```
 
-- En Postman, vamos a seleccionar **binary**
-- Luego seleccionamos **usuarios.json**
-- Luego enviamos la consulta a **`_bulk`**
+- En Postman, seleccionas **binary**
+- Luego seleccionas el archivo **usuarios.json**
+- Luego envias un **POST** a **`_bulk`**
 
 ```java
 POST /usuarios/_bulk
