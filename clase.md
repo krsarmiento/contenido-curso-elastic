@@ -18,7 +18,6 @@ PUT /restaurantes/_mapping
   "properties":{
     "calificacion": { "type": "double" },
     "direccion": { "type": "text" },
-    "telefono": { "type": "keyword" },
     "platos": {
       "type": "nested",
       "properties": {
@@ -30,8 +29,7 @@ PUT /restaurantes/_mapping
     },
     "ultimaModificacion": {
       "properties": {
-        "nombreCompleto": { "type": "text" },
-        "email": { "type": "text" },
+        "usuario": { "type": "text" },
         "fecha": { "type": "date" }
       }
     }
@@ -47,7 +45,6 @@ POST /restaurantes/_update/1
   "doc": {
     "calificacion": 4.22,
     "direccion": "Calle Primera, Barrio Centro",
-    "telefono": "111232323",
     "platos": [
       {
         "nombre": "Bowl Picante",
@@ -57,8 +54,7 @@ POST /restaurantes/_update/1
       }
     ],
     "ultimaModificacion": {
-      "nombreCompleto": "Rick Sanchez",
-      "email": "rsanchez@mail.com",
+      "usuario": "rsanchez@mail.com",
       "fecha": "2020-03-04"
     }
   }
@@ -71,7 +67,6 @@ POST /restaurantes/_update/2
   "doc": {
     "calificacion": 3.75,
     "direccion": "Carrera Segunda, Barrio Occidental",
-    "telefono": "444565656",
     "platos": [
       {
         "nombre": "Nachos XL",
@@ -81,8 +76,7 @@ POST /restaurantes/_update/2
       }
     ],
     "ultimaModificacion": {
-      "nombreCompleto": "Morty Smith",
-      "email": "msmith@mail.com",
+      "usuario": "jsmith@mail.com",
       "fecha": "2020-02-26"
     }
   }
@@ -105,10 +99,12 @@ POST /restaurantes/_update/3
       }
     ],
     "ultimaModificacion": {
-      "nombreCompleto": "Summer Smith",
-      "email": "ssmith@mail.com",
+      "usuario": "ssmith@mail.com",
       "fecha": "2020-02-17"
     }
   }
 }
 ```
+
+
+## Próxima clase: Consultas de Rango y Agregaciones
