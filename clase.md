@@ -29,7 +29,7 @@ GET /restaurantes/_search
   "query": {
     "range": {
       "ultimaModificacion.fecha": {
-        "gte": "2020-02-15",
+        "gte": "2020-01-15",
         "lt": "2020-03-01"
       }
     }
@@ -89,4 +89,4 @@ GET /restaurantes/_search
 - Promedio cambia porque hay un nuevo valor
 - promedio: 3.535
 
-## Próxima clase: Consultas de Rango y Agregaciones
+## Próxima clase: Revisión Final Del Directorio
