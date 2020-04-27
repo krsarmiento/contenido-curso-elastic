@@ -12,7 +12,7 @@ GET /restaurantes/_search
   "query": {
     "range": {
       "calificacion": {
-        "gte": 3.5,
+        "gt": 3.5,
         "lte": 4.5
       }
     }
