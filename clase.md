@@ -65,7 +65,7 @@ PUT /restaurantes/_doc/4
     "ultimaModificacion": {
         "fecha": "2020-03-15",
         "nombreCompleto": "Gustavo Fring",
-        "email": "gfring@vendor.com"
+        "email": "gustavo@vendor.com"
     }
 }
 ```
