@@ -87,7 +87,6 @@ POST /restaurantes/_update/2
 POST /restaurantes/_update/3
 {
   "doc": {
-    "calificacion": 3.17,
     "direccion": "Carrera Tercera, Barrio Norte",
     "platos": [
       {
