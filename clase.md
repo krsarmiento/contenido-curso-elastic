@@ -82,6 +82,7 @@ POST /restaurantes/_update/2
   }
 }
 ```
+- **SUBWAY SIN CALIFICACIÓN**
 
 ```java
 POST /restaurantes/_update/3
