@@ -52,25 +52,9 @@ GET /restaurantes/_search
 }
 ```
 
-- min: 3.17
-- max: 4.22
-- promedio: 3.713
+### Indicamos que para los restaurantes sin calificación, por defecto es **3.0** (SUBWAY)
 
-### Creamos nuevo restaurante sin datos
-
-```java
-PUT /restaurantes/_doc/4
-{
-    "nombre": "Los Pollos Hermanos",
-    "ultimaModificacion": {
-        "fecha": "2020-03-15",
-        "nombreCompleto": "Gustavo Fring",
-        "email": "gustavo@vendor.com"
-    }
-}
-```
-
-- Indicamos que para los restaurantes sin calificación, por defecto es **3.0**
+- 
 
 ```java
 GET /restaurantes/_search
@@ -85,8 +69,5 @@ GET /restaurantes/_search
     }
 }
 ```
-
-- Promedio cambia porque hay un nuevo valor
-- promedio: 3.535
 
 ## Próxima clase: Revisión Final Del Directorio
