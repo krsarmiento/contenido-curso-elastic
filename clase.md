@@ -45,7 +45,7 @@ PUT /platos/_doc/1
   "estado": "activo",
   "pedidosUltimaHora": 42,
   "ultimaModificacion": {
-    "usuario": "rsanchez@mail.com",
+    "usuario": "rick@mail.com",
     "fecha": "2020-02-19"
   }
 }
@@ -59,7 +59,7 @@ PUT /platos/_doc/2
   "estado": "activo",
   "pedidosUltimaHora": 0,
   "ultimaModificacion": {
-    "usuario": "rsanchez@mail.com",
+    "usuario": "rick@mail.com",
     "fecha": "2020-01-22"
   }
 }
