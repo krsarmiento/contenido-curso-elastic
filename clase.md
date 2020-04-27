@@ -89,7 +89,6 @@ POST /restaurantes/_update/3
   "doc": {
     "calificacion": 3.17,
     "direccion": "Carrera Tercera, Barrio Norte",
-    "telefono": "777898989",
     "platos": [
       {
         "nombre": "Ensaladísima",
