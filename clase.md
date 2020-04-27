@@ -10,7 +10,7 @@ PUT /platos/_doc/3
   "estado": "activo",
   "pedidosUltimaHora": 11,
   "ultimaModificacion": {
-    "usuario": "jsmith@mail.com",
+    "usuario": "jerry@mail.com",
     "fecha": "2020-03-01"
   }
 }
