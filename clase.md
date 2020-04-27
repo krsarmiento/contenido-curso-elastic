@@ -20,7 +20,7 @@ GET /restaurantes/_search
 }
 ```
 
-### Búsqueda No. 2 - Ultima modificación en la **segunda mitad del mes de Febrero**
+### Búsqueda No. 2 - Ultima modificación desde la segunda mitad de Enero hasta finales de Febrero
 
 ```java
 GET /restaurantes/_search
@@ -89,3 +89,4 @@ GET /restaurantes/_search
 - Promedio cambia porque hay un nuevo valor
 - promedio: 3.535
 
+## Próxima clase: Consultas de Rango y Agregaciones
