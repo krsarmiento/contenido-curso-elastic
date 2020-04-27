@@ -54,7 +54,7 @@ POST /restaurantes/_update/1
       }
     ],
     "ultimaModificacion": {
-      "usuario": "rsanchez@mail.com",
+      "usuario": "rick@mail.com",
       "fecha": "2020-03-04"
     }
   }
@@ -76,7 +76,7 @@ POST /restaurantes/_update/2
       }
     ],
     "ultimaModificacion": {
-      "usuario": "jsmith@mail.com",
+      "usuario": "jerry@mail.com",
       "fecha": "2020-02-26"
     }
   }
@@ -98,7 +98,7 @@ POST /restaurantes/_update/3
       }
     ],
     "ultimaModificacion": {
-      "usuario": "ssmith@mail.com",
+      "usuario": "beth@mail.com",
       "fecha": "2020-02-17"
     }
   }
