@@ -1,4 +1,4 @@
-# Clase 12 - Consultas Anidadas
+# Clase 12 - Consultas Anidadas (FAST)
 
 ## Modelo Restaurantes
 - Creamos índice con **nombre y categorias** (una de ellas principal)
@@ -67,11 +67,9 @@ GET /restaurantes/_search
       "path": "categorias",
       "query": {
         "bool": {
-          "must": [
-            {
-              "term": { "categorias.nombre": "Comida Saludable" }
-            }
-          ]
+          "must": {
+            "term": { "categorias.nombre": "Comida Saludable" }
+          }
         }
       }
     }
