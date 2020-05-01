@@ -1,4 +1,4 @@
-# Clase 11 - Construyendo una consulta compuesta
+# Clase 11 - Construyendo una consulta compuesta (TAKE IT EASY)
 
 ```java
 GET /platos/_search
