@@ -1,4 +1,4 @@
-# Clase 07 - Puntaje (BE A BIT FAST)
+# Clase 07 - Puntaje (FASTER)
 
 ## Agreguemos un nuevo plato
 
