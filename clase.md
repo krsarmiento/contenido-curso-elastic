@@ -18,6 +18,7 @@ GET /restaurantes/_search
 2. Que sean de **comida rápida** ó que vendan **nachos**
 
 ```java
+GET /restaurantes/_search
 {
   "query": {
     "bool": {
