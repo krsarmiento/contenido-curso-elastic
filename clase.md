@@ -29,8 +29,7 @@ GET /usuarios/_mapping
 
 ## **POST / PUT**
 
-- En la **Clase pasada** *creamos y actualizamos* documentos
-- Sin embargo, la actualización directamente usando **`_doc`** sobreescribe el documento
+- En la **Clase pasada** *creaste* documentos
 - Actualicemos el usuario 1: **edad=60**
 
 ```java
