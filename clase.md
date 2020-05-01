@@ -1,4 +1,4 @@
-# Clase 05 - Verbos HTTP
+# Clase 05 - Verbos HTTP (FASTER)
 - Vamos a mirar el uso de los verbos HTTP dentro de ElasticSearch
 
 ## **GET**
