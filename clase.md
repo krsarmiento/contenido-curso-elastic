@@ -6,7 +6,7 @@
 PUT /platos/_doc/3
 {
   "nombre": "Nachos XL",
-  "descripcion": "Nachos con carne, guacamole, pico de gallo, salsa picante, queso y frijoles",
+  "descripcion": "Nachos con carne, guacamole, pico de gallo, salsa picante y queso",
   "estado": "activo",
   "pedidosUltimaHora": 11,
   "ultimaModificacion": {
@@ -30,17 +30,6 @@ GET /platos/_search
 }
 ```
 
-- **max_score**: 3.2200139
-
-### **Nachos XL**: 3.2200139 
-- palabra **nachos** en **nombre**
-- palabras **nachos/queso** en **descripción**
-- Mayor coincidencia
-
-### **Ensaladísima**: 0.4471386
-- Palabra queso en **descripción**
-- Menor coincidencia
-
 ## Búsqueda No. 2: Bowl Pollo Saludable
 
 ```java
@@ -52,17 +41,10 @@ GET /platos/_search
 }
 ```
 
-### **Bowl Picante**: 1.9992181
-- Bowl en **nombre**
-- Pollo en **descripción**
-
-###  **Ensaladísima**: 0.9331132
-- Saludable en **descripción**
-
 ## Búsqueda No. 3: Guacamole Picante
 
-- Modifiquemos el puntaje agregando **fields**
-- Con  **^** modificamos el peso de un campo
+- Vas a modificar el puntaje agregando **fields**
+- Con  **^** modificas el peso de un campo
 
 ```java
 GET /platos/_search
