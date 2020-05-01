@@ -1,4 +1,4 @@
-# Clase 09 - Consultas Booleanas
+# Clase 09 - Consultas Booleanas (TAKE IT EASY)
 
 - Retorna documentos que coincidan con las **combinaciones de ocurrencias** dentro de ella
 
